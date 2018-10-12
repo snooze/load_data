@@ -14,6 +14,7 @@ CREATE TABLE metallic_load (
   created TIMESTAMP NOT NULL DEFAULT CURRENT_TIMESTAMP,
   title TEXT NOT NULL,
   load_type TEXT NOT NULL,
+  caliber TEXT NOT NULL,
   cart_case TEXT NOT NULL,
   powder_man TEXT NOT NULL,
   powder_name TEXT NOT NULL,
@@ -24,7 +25,7 @@ CREATE TABLE metallic_load (
   primer_man TEXT NOT NULL,
   primer_type TEXT NOT NULL,
   coal REAL NOT NULL,
-  notes TEXT NOT NULL,
+  notes TEXT,
   FOREIGN KEY (author_id) REFERENCES user (id)
 );
 
@@ -34,16 +35,17 @@ CREATE TABLE shotshell_load (
   created TIMESTAMP NOT NULL DEFAULT CURRENT_TIMESTAMP,
   title TEXT NOT NULL,
   load_type TEXT NOT NULL,
+  guage TEXT NOT NULL,
   cart_case TEXT NOT NULL,
   powder_man TEXT NOT NULL,
   powder_name TEXT NOT NULL,
   powder_wt REAL NOT NULL,
-   TEXT NOT NULL,
-   TEXT NOT NULL,
-   REAL NOT NULL,
+  shot_type TEXT NOT NULL,
+  shot_size TEXT NOT NULL,
+  shot_weight TEXT NOT NULL,
   primer_man TEXT NOT NULL,
   primer_type TEXT NOT NULL,
-  coal REAL NOT NULL,
-  notes TEXT NOT NULL,
+  hull_type REAL NOT NULL,
+  notes TEXT,
   FOREIGN KEY (author_id) REFERENCES user (id)
 );
