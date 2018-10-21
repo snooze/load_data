@@ -1,0 +1,47 @@
+{% extends 'base.html' %}
+
+{% block header %}
+  <h1>{% block title %}New Load{% endblock %}</h1>
+{% endblock %}
+
+{% block content %}
+  <form method="post">
+    <label for="title">Title</label>
+    <input name="title" id="title" value="{{ request.form['title'] }}" required>
+
+    <label for="load_type">Load Type</label>
+    <input name="load_type" id="load_type" value="{{ request.form['load_type'] }}" required>
+
+    <label for="caliber">Caliber</label>
+    <input name="caliber" id="caliber" value="{{ request.form['caliber'] }}" required>
+
+    <label for="cart_case">Case Type</label>
+    <input name="cart_case" id="cart_case" value="{{ request.form['cart_case'] }}" required>
+
+    <label for="powder_man">powder_man</label>
+    <input name="powder_man" id="powder_man" value="{{ request.form['powder_man'] }}" required>
+
+    <label for="powder_name">powder_name</label>
+    <input name="powder_name" id="powder_name" value="{{ request.form['powder_name'] }}" required>
+
+    <label for="powder_wt">powder_wt</label>
+    <input name="powder_wt" id="powder_wt" value="{{ request.form['powder_wt'] }}" required>
+
+    <label for="bullet_man">bullet_man</label>
+    <input name="bullet_man" id="bullet_man" value="{{ request.form['bullet_man'] }}" required>
+
+    <label for="bullet_desc">bullet_desc</label>
+    <input name="bullet_desc" id="bullet_desc" value="{{ request.form['bullet_desc'] }}" required>
+
+
+
+
+
+    <label for="notes">Notes</label>
+    <textarea name="notes" id="notes">{{ request.form['notes'] }}</textarea>
+
+
+
+    <input type="submit" value="Save">
+  </form>
+{% endblock %}
